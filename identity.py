@@ -68,6 +68,7 @@ class Identity(Extensions):
                 body=json.dumps(self.credentials()))
         content = json.loads(rawcontent)
         self.token = content['access']['token']['id']
+        #TODO: this needs to convert the ISO8601 string to a timestamp
         self.expiration = content['access']['token']['expires']
         self.catalog = content['access']['serviceCatalog']
 
